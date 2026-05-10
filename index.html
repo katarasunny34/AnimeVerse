@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AnimeVerse - Premium Anime Streaming Platform. Watch the latest anime series and movies in HD quality.">
+    <meta name="keywords" content="anime, streaming, watch anime, anime online, anime series, anime movies">
+    <meta name="author" content="AnimeVerse Team">
+    <meta name="theme-color" content="#0b0b0f">
+    <title>AnimeVerse - Premium Anime Streaming</title>
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-logo">AnimeVerse</div>
+        <div class="loading-bar">
+            <div class="loading-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="sidebar-logo-icon"><i class="fas fa-play"></i></div>
+            <div class="sidebar-logo-text">AnimeVerse</div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-indicator"></div>
+            <div class="sidebar-nav-title">Menu</div>
+            <a href="index.html" class="sidebar-nav-item active">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="index.html#trending" class="sidebar-nav-item">
+                <i class="fas fa-fire"></i> Trending
+            </a>
+            <a href="library.html" class="sidebar-nav-item">
+                <i class="fas fa-book"></i> Library
+            </a>
+            <a href="index.html#favorites" class="sidebar-nav-item">
+                <i class="fas fa-heart"></i> Favorites
+            </a>
+
+            <div class="sidebar-nav-title" style="margin-top: 1.5rem;">Discover</div>
+            <a href="index.html#categories" class="sidebar-nav-item">
+                <i class="fas fa-th-large"></i> Categories
+            </a>
+            <a href="index.html#plans" class="sidebar-nav-item">
+                <i class="fas fa-crown"></i> Premium
+            </a>
+            <a href="team.html" class="sidebar-nav-item">
+                <i class="fas fa-users"></i> Team
+            </a>
+            <a href="contact.html" class="sidebar-nav-item">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p class="sidebar-footer-text">&copy; 2025 AnimeVerse</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search anime, movies, series..." aria-label="Search anime">
+                </div>
+            </div>
+            <div class="navbar-right">
+                <button class="nav-icon-btn" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="Assest/profile_pic.jpg" alt="User Avatar">
+                    </div>
+                    <span class="user-name">Sunny</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-slider">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <div class="hero-slide-bg" style="background-image: url('Assest/Banner/Attack_On_Titan.jpg')">
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-badge"><i class="fas fa-fire"></i> Trending Now</div>
+                        <h1 class="hero-title">Attack on Titan</h1>
+                        <div class="hero-meta">
+                            <span class="hero-rating"><i class="fas fa-star"></i> 9.8</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                            <span><i class="fas fa-tv"></i> 87 Episodes</span>
+                            <span><i class="fas fa-film"></i> Action, Drama</span>
+                        </div>
+                        <p class="hero-description">In a world where humanity lives within cities surrounded by enormous
+                            walls due to the Titans, gigantic humanoid creatures who devour humans seemingly without
+                            reason.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-watch" onclick="window.location.href='anime-details.html#episodes'"><i class="fas fa-play"></i> Watch Now</button>
+                            <button class="btn btn-secondary btn-add-list"><i class="fas fa-plus"></i> Add to
+                                List</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <div class="hero-slide-bg" style="background-image: url('Assest/Banner/Demon_Slayer.jpg')">
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-badge"><i class="fas fa-crown"></i> Top Rated</div>
+                        <h1 class="hero-title">Demon Slayer</h1>
+                        <div class="hero-meta">
+                            <span class="hero-rating"><i class="fas fa-star"></i> 9.6</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-tv"></i> 55 Episodes</span>
+                            <span><i class="fas fa-film"></i> Action, Fantasy</span>
+                        </div>
+                        <p class="hero-description">A young boy named Tanjiro Kamado becomes a demon slayer after his
+                            family is slaughtered and his younger sister Nezuko is turned into a demon.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-watch"><i class="fas fa-play"></i> Watch Now</button>
+                            <button class="btn btn-secondary btn-add-list"><i class="fas fa-plus"></i> Add to
+                                List</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="hero-slide">
+                    <div class="hero-slide-bg" style="background-image: url('Assest/Banner/Jujutsu_Kaisen.png')">
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-badge"><i class="fas fa-bolt"></i> New Release</div>
+                        <h1 class="hero-title">Jujutsu Kaisen</h1>
+                        <div class="hero-meta">
+                            <span class="hero-rating"><i class="fas fa-star"></i> 9.5</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                            <span><i class="fas fa-tv"></i> 47 Episodes</span>
+                            <span><i class="fas fa-film"></i> Action, Supernatural</span>
+                        </div>
+                        <p class="hero-description">A boy swallows a cursed talisman - the finger of a demon - and
+                            becomes cursed himself. He enters a shaman's school to be able to locate the demon's other
+                            body parts.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-watch"><i class="fas fa-play"></i> Watch Now</button>
+                            <button class="btn btn-secondary btn-add-list"><i class="fas fa-plus"></i> Add to
+                                List</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="hero-slide">
+                    <div class="hero-slide-bg" style="background-image: url('Assest/Banner/One_Piece.png')">
+                    </div>
+                    <div class="hero-content">
+                        <div class="hero-badge"><i class="fas fa-infinity"></i> Long Running</div>
+                        <h1 class="hero-title">One Piece</h1>
+                        <div class="hero-meta">
+                            <span class="hero-rating"><i class="fas fa-star"></i> 9.4</span>
+                            <span><i class="fas fa-calendar"></i> 1999 - Present</span>
+                            <span><i class="fas fa-tv"></i> 1070+ Episodes</span>
+                            <span><i class="fas fa-film"></i> Adventure, Comedy</span>
+                        </div>
+                        <p class="hero-description">Follows the adventures of Monkey D. Luffy and his pirate crew in
+                            order to find the greatest treasure ever left by the legendary Pirate, Gold Roger.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-watch"><i class="fas fa-play"></i> Watch Now</button>
+                            <button class="btn btn-secondary btn-add-list"><i class="fas fa-plus"></i> Add to
+                                List</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-slider-dots">
+                <button class="hero-dot active" aria-label="Slide 1"></button>
+                <button class="hero-dot" aria-label="Slide 2"></button>
+                <button class="hero-dot" aria-label="Slide 3"></button>
+                <button class="hero-dot" aria-label="Slide 4"></button>
+            </div>
+        </section>
+
+        <!-- Trending Section -->
+        <section class="section" id="trending">
+            <div class="section-header reveal">
+                <div>
+                    <h2 class="section-title">
+                        <div class="section-title-icon"><i class="fas fa-fire"></i></div>
+                        Trending Now
+                    </h2>
+                    <p class="section-subtitle">Most popular anime this week</p>
+                </div>
+                <a href="library.html" class="view-all-btn">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="scroll-container reveal">
+                <div class="anime-card" data-search="solo leveling action fantasy">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Solo_Leveling.png" alt="Solo Leveling" loading="lazy">
+                        <div class="anime-card-badge">Trending #1</div>
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.7</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Solo Leveling</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Action</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 12 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="frieren beyond journey's end fantasy adventure">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Frieren Beyond Journey's End.png" alt="Frieren" loading="lazy">
+                        <div class="anime-card-badge">Trending #2</div>
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.6</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Frieren: Beyond Journey's End</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Fantasy</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 28 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="chainsaw man action horror">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Chainsaw_Man.png" alt="Chainsaw Man" loading="lazy">
+                        <div class="anime-card-badge">Trending #3</div>
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.5</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Chainsaw Man</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Horror</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 12 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="spy x family comedy action">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Spy_x_Family.png" alt="Spy x Family" loading="lazy">
+                        <div class="anime-card-badge">Trending #4</div>
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.4</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Spy x Family</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Comedy</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 25 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="vinland saga action adventure">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Vinland_Saga.png" alt="Vinland Saga" loading="lazy">
+                        <div class="anime-card-badge">Trending #5</div>
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.3</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Vinland Saga</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Adventure</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 48 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="bleach thousand year blood war action supernatural">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Bleach_TYBW.png" alt="Bleach TYBW" loading="lazy">
+                        <div class="anime-card-badge">Trending #6</div>
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.2</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Bleach: Thousand-Year Blood War</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Supernatural</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 39 EP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-nav">
+                <button class="scroll-nav-btn scroll-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="scroll-nav-btn scroll-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="section">
+            <div class="section-header reveal">
+                <div>
+                    <h2 class="section-title">
+                        <div class="section-title-icon"><i class="fas fa-compass"></i></div>
+                        Recommended For You
+                    </h2>
+                    <p class="section-subtitle">Based on your watching history</p>
+                </div>
+                <a href="library.html" class="view-all-btn">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="anime-grid reveal">
+                <div class="anime-card" data-search="one piece adventure comedy">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/One_Piece.png" alt="One Piece" loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.4</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">One Piece</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Adventure</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 1070+ EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="death note thriller psychological">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Death_Note.png" alt="Death Note" loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.0</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Death Note</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Thriller</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 37 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="fullmetal alchemist brotherhood action adventure">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Fullmetal_Alchemist_Brotherhood.png" alt="Fullmetal Alchemist"
+                            loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.9</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Fullmetal Alchemist: Brotherhood</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Adventure</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 64 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="steins gate sci-fi thriller">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Steins;_Gate.png" alt="Steins;Gate" loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.1</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Steins;Gate</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Sci-Fi</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 24 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="hunter x hunter action adventure">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Hunter_x_Hunter.png" alt="Hunter x Hunter" loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 9.3</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Hunter x Hunter</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Adventure</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 148 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="one punch man action comedy">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/One_Punch_Man.png" alt="One Punch Man" loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 8.8</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">One Punch Man</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Comedy</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 24 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="naruto shippuden action ninja">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Naruto_Shippuden.png" alt="Naruto" loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 8.7</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Naruto Shippuden</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Action</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 500 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="tokyo ghoul horror action">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/Tokyo_Ghoul.png" alt="Tokyo Ghoul" loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 8.5</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">Tokyo Ghoul</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Horror</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 48 EP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anime-card" data-search="my hero academia action superhero">
+                    <div class="anime-card-img">
+                        <img src="Assest/img/My_Hero_Academia.png" alt="My Hero Academia" loading="lazy">
+                        <div class="anime-card-rating"><i class="fas fa-star"></i> 8.9</div>
+                        <div class="anime-card-overlay">
+                            <button class="btn btn-primary btn-watch" style="width: 100%;"><i class="fas fa-play"></i>
+                                Watch</button>
+                        </div>
+                    </div>
+                    <div class="anime-card-info">
+                        <h3 class="anime-card-title">My Hero Academia</h3>
+                        <div class="anime-card-meta">
+                            <span class="anime-card-genre">Superhero</span>
+                            <span class="anime-card-episodes"><i class="fas fa-tv"></i> 138 EP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section" id="categories">
+            <div class="section-header reveal">
+                <div>
+                    <h2 class="section-title">
+                        <div class="section-title-icon"><i class="fas fa-th-large"></i></div>
+                        Popular Categories
+                    </h2>
+                    <p class="section-subtitle">Explore anime by genre</p>
+                </div>
+            </div>
+
+            <div class="categories-grid reveal">
+                <a href="library.html" class="category-card">
+                    <div class="category-icon">⚔️</div>
+                    <div class="category-name">Action</div>
+                    <div class="category-count">420+ Titles</div>
+                </a>
+                <a href="library.html" class="category-card">
+                    <div class="category-icon">💕</div>
+                    <div class="category-name">Romance</div>
+                    <div class="category-count">280+ Titles</div>
+                </a>
+                <a href="library.html" class="category-card">
+                    <div class="category-icon">🐉</div>
+                    <div class="category-name">Fantasy</div>
+                    <div class="category-count">350+ Titles</div>
+                </a>
+                <a href="library.html" class="category-card">
+                    <div class="category-icon">🌍</div>
+                    <div class="category-name">Isekai</div>
+                    <div class="category-count">150+ Titles</div>
+                </a>
+                <a href="library.html" class="category-card">
+                    <div class="category-icon">👻</div>
+                    <div class="category-name">Horror</div>
+                    <div class="category-count">120+ Titles</div>
+                </a>
+                <a href="library.html" class="category-card">
+                    <div class="category-icon">😂</div>
+                    <div class="category-name">Comedy</div>
+                    <div class="category-count">310+ Titles</div>
+                </a>
+                <a href="library.html" class="category-card">
+                    <div class="category-icon">🚀</div>
+                    <div class="category-name">Sci-Fi</div>
+                    <div class="category-count">180+ Titles</div>
+                </a>
+                <a href="library.html" class="category-card">
+                    <div class="category-icon">🎭</div>
+                    <div class="category-name">Drama</div>
+                    <div class="category-count">240+ Titles</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Subscription Plans -->
+        <section class="section" id="plans">
+            <div class="section-header reveal text-center" style="justify-content: center;">
+                <div>
+                    <h2 class="section-title" style="justify-content: center;">
+                        <div class="section-title-icon"><i class="fas fa-crown"></i></div>
+                        Choose Your Plan
+                    </h2>
+                    <p class="section-subtitle">Unlock premium features and enjoy unlimited anime</p>
+                </div>
+            </div>
+
+            <div class="plans-grid reveal">
+                <div class="plan-card">
+                    <div class="plan-name">Gold Plan</div>
+                    <div class="plan-price">₹150<span style="font-size: 1rem; color: var(--text-muted);">/month</span>
+                    </div>
+                    <div class="plan-period">Perfect for casual watchers</div>
+                    <div class="plan-features">
+                        <div class="plan-feature"><i class="fas fa-check"></i> HD Streaming (720p)</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> No Ads</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Watch on 2 devices</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Standard library access</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Download 10 episodes</div>
+                    </div>
+                    <button class="plan-btn plan-btn-secondary">Get Started</button>
+                </div>
+
+                <div class="plan-card featured">
+                    <div class="plan-name">Platinum Plan</div>
+                    <div class="plan-price">₹299<span style="font-size: 1rem; color: var(--text-muted);">/month</span>
+                    </div>
+                    <div class="plan-period">Best value for anime fans</div>
+                    <div class="plan-features">
+                        <div class="plan-feature"><i class="fas fa-check"></i> Full HD Streaming (1080p)</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> No Ads</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Watch on 4 devices</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Full library + simulcasts</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Unlimited downloads</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Offline viewing</div>
+                    </div>
+                    <button class="plan-btn plan-btn-primary">Get Started</button>
+                </div>
+
+                <div class="plan-card">
+                    <div class="plan-name">Diamond Plan</div>
+                    <div class="plan-price">₹599<span style="font-size: 1rem; color: var(--text-muted);">/month</span>
+                    </div>
+                    <div class="plan-period">Ultimate anime experience</div>
+                    <div class="plan-features">
+                        <div class="plan-feature"><i class="fas fa-check"></i> 4K Ultra HD Streaming</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> No Ads</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Watch on 8 devices</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Full library + exclusives</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Unlimited downloads</div>
+                        <div class="plan-feature"><i class="fas fa-check"></i> Priority support</div>
+                    </div>
+                    <button class="plan-btn plan-btn-secondary">Get Started</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon"><i class="fas fa-play"></i></div>
+                        <div class="footer-logo-text">AnimeVerse</div>
+                    </div>
+                    <p class="footer-desc">Your ultimate destination for premium anime streaming. Watch thousands of
+                        anime series and movies in HD quality, anytime, anywhere.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="library.html" class="footer-link"><i class="fas fa-chevron-right"></i> Library</a>
+                        <a href="index.html#trending" class="footer-link"><i class="fas fa-chevron-right"></i>
+                            Trending</a>
+                        <a href="index.html#plans" class="footer-link"><i class="fas fa-chevron-right"></i> Premium</a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Support</h4>
+                    <div class="footer-links">
+                        <a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                        <a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> FAQ</a>
+                        <a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Help Center</a>
+                        <a href="team.html" class="footer-link"><i class="fas fa-chevron-right"></i> Our Team</a>
+                    </div>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p class="footer-newsletter-text">Subscribe to get the latest anime updates and exclusive offers.
+                    </p>
+                    <form class="newsletter-form" onsubmit="return false;">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 AnimeVerse. All rights reserved. Made with <i
+                        class="fas fa-heart" style="color: var(--accent-primary);"></i> by the AnimeVerse Team.</p>
+                <div class="footer-payment">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-items">
+            <a href="index.html" class="mobile-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="library.html" class="mobile-nav-item">
+                <i class="fas fa-book"></i>
+                <span>Library</span>
+            </a>
+            <a href="index.html#trending" class="mobile-nav-item">
+                <i class="fas fa-fire"></i>
+                <span>Trending</span>
+            </a>
+            <a href="team.html" class="mobile-nav-item">
+                <i class="fas fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="contact.html" class="mobile-nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
