@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +17,12 @@
             border: 2px solid rgba(220, 38, 38, 0.4);
             transition: all 0.3s ease;
         }
+
         .glowing-border:hover {
             box-shadow: 0 0 30px rgba(220, 38, 38, 0.9);
             border-color: rgba(220, 38, 38, 0.8);
         }
+
         .character-card {
             background: rgba(30, 30, 40, 0.6);
             backdrop-filter: blur(10px);
@@ -29,9 +32,11 @@
             padding: 1rem;
             transition: transform 0.3s ease;
         }
+
         .character-card:hover {
             transform: translateY(-5px);
         }
+
         .character-img {
             width: 100px;
             height: 100px;
@@ -39,10 +44,11 @@
             margin: 0 auto 1rem;
             object-fit: cover;
             border: 3px solid #dc2626;
-            box-shadow: 0 0 15px rgba(220,38,38,0.5);
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
         }
+
         .season-tag {
-            background: rgba(220,38,38,0.2);
+            background: rgba(220, 38, 38, 0.2);
             color: #ff4d4d;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
@@ -53,6 +59,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen">
@@ -127,7 +134,8 @@
                 </button>
                 <div class="user-profile" onclick="window.location.href='profile.html'" style="cursor: pointer;">
                     <div class="user-avatar">
-                        <img src="https://placeholder.vn/placeholder/100x100?bg=ff004f&color=ffffff&text=User" alt="User Avatar" id="navbar-avatar">
+                        <img src="https://placeholder.vn/placeholder/100x100?bg=ff004f&color=ffffff&text=User"
+                            alt="User Avatar" id="navbar-avatar">
                     </div>
                     <span class="user-name" id="navbar-username">User</span>
                 </div>
@@ -157,19 +165,17 @@
                         <span class="anime-tag">Comedy</span>
                         <span class="anime-tag">Romance</span>
                     </div>
-                    
-                    <div style="margin: 1rem 0;">
-                        <span class="season-tag">Season 1: High School DxD</span>
-                        <span class="season-tag">Season 2: High School DxD NEW</span>
-                        <span class="season-tag">Season 3: High School DxD BorN</span>
-                        <span class="season-tag">Season 4: High School DxD HERO</span>
-                    </div>
 
-                    <p class="anime-details-desc">Issei Hyoudou is a dim-witted, lecherous second-year high school student who is killed by a girl on his first date ever. Issei is reincarnated as a devil, and from that day forward, he serves as an underling of Rias Gremory, a high-level devil who is also the prettiest girl on Issei's campus. Thus begins a chaotic supernatural life involving angels, devils, and fallen angels.</p>
-                    
+                    <p class="anime-details-desc">High School DxD follows Issei Hyoudou, a high school student reborn as
+                        a devil after being killed on his first date. He joins the beautiful Rias Gremory and is pulled
+                        into a chaotic world of devils, angels, and supernatural battles.</p>
+
                     <div class="anime-details-actions">
-                        <button class="btn btn-primary btn-watch" onclick="document.getElementById('video-player').style.display='block'; document.getElementById('video-player').scrollIntoView({behavior: 'smooth'});"><i class="fas fa-play"></i> Watch Episode 1</button>
-                        <button class="btn btn-secondary btn-add-list"><i class="fas fa-plus"></i> Add to Library</button>
+                        <button class="btn btn-primary btn-watch"
+                            onclick="document.getElementById('video-player').style.display='block'; document.getElementById('video-player').scrollIntoView({behavior: 'smooth'});"><i
+                                class="fas fa-play"></i> Watch Episode 1</button>
+                        <button class="btn btn-secondary btn-add-list"><i class="fas fa-plus"></i> Add to
+                            Library</button>
                         <button class="btn btn-glass"><i class="fas fa-share-alt"></i> Share</button>
                     </div>
                 </div>
@@ -186,25 +192,30 @@
                     </h2>
                 </div>
             </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;" class="reveal">
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;"
+                class="reveal">
                 <div class="character-card">
-                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Issei" alt="Issei Hyoudou" class="character-img">
+                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Issei"
+                        alt="Issei Hyoudou" class="character-img">
                     <h3 style="margin-bottom: 0.5rem;">Issei Hyoudou</h3>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">Red Dragon Emperor</p>
                 </div>
                 <div class="character-card">
-                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Rias" alt="Rias Gremory" class="character-img">
+                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Rias"
+                        alt="Rias Gremory" class="character-img">
                     <h3 style="margin-bottom: 0.5rem;">Rias Gremory</h3>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">Crimson-Haired Ruin Princess</p>
                 </div>
                 <div class="character-card">
-                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Asia" alt="Asia Argento" class="character-img">
+                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Asia"
+                        alt="Asia Argento" class="character-img">
                     <h3 style="margin-bottom: 0.5rem;">Asia Argento</h3>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">Bishop</p>
                 </div>
                 <div class="character-card">
-                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Akeno" alt="Akeno Himejima" class="character-img">
+                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Akeno"
+                        alt="Akeno Himejima" class="character-img">
                     <h3 style="margin-bottom: 0.5rem;">Akeno Himejima</h3>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">Priestess of Thunder</p>
                 </div>
@@ -212,11 +223,15 @@
         </section>
 
         <!-- Video Player Section -->
-        <section class="video-player-section" id="video-player" style="display: none; padding: 2rem 5%; max-width: 1200px; margin: 0 auto;">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 0 30px rgba(220,38,38,0.5); border: 2px solid rgba(220,38,38,0.3);">
+        <section class="video-player-section" id="video-player"
+            style="display: none; padding: 2rem 5%; max-width: 1200px; margin: 0 auto;">
+            <div
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 0 30px rgba(220,38,38,0.5); border: 2px solid rgba(220,38,38,0.3);">
                 <!-- Placeholder for demo purposes, you can add an actual iframe if available -->
-                <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: #000; display:flex; align-items:center; justify-content:center; flex-direction:column;">
-                    <i class="fas fa-play-circle" style="font-size: 4rem; color: #dc2626; margin-bottom: 1rem; cursor: pointer; text-shadow: 0 0 20px #dc2626;"></i>
+                <div
+                    style="position: absolute; top:0; left:0; width:100%; height:100%; background: #000; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+                    <i class="fas fa-play-circle"
+                        style="font-size: 4rem; color: #dc2626; margin-bottom: 1rem; cursor: pointer; text-shadow: 0 0 20px #dc2626;"></i>
                     <p style="color: #fff; font-size: 1.2rem;">Episode 1: I Got a Girlfriend!</p>
                 </div>
             </div>
@@ -239,19 +254,19 @@
                 <script>
                     const episodesGrid = document.querySelector('.episodes-grid');
                     const epTitles = [
-                        "I Got a Girlfriend!", "I'm Done Being Human!", "I Made a Friend!", 
+                        "I Got a Girlfriend!", "I'm Done Being Human!", "I Made a Friend!",
                         "I'm Saving My Friend!", "I Will Defeat My Ex-girlfriend!", "I Work as a Devil!",
-                        "I Get a Familiar!", "I Pick a Fight!", "I've Begun My Training!", 
+                        "I Get a Familiar!", "I Pick a Fight!", "I've Begun My Training!",
                         "The Showdown Begins!", "The Acclaimed Battle Continues!", "I'm Here to Keep My Promise!"
                     ];
-                    
+
                     let html = '';
-                    for(let i = 0; i < 12; i++) {
-                        let epNum = (i+1).toString().padStart(2, '0');
+                    for (let i = 0; i < 12; i++) {
+                        let epNum = (i + 1).toString().padStart(2, '0');
                         html += `
                         <div class="episode-card" onclick="document.getElementById('video-player').style.display='block'; document.getElementById('video-player').scrollIntoView({behavior: 'smooth'});" style="cursor: pointer; border-radius: 8px;">
                             <div class="episode-thumb">
-                                <img src="Assest/Banner/High_School_DxD.jpg" alt="Episode ${i+1}" loading="lazy">
+                                <img src="Assest/Banner/High_School_DxD.jpg" alt="Episode ${i + 1}" loading="lazy">
                                 <div class="episode-play-overlay"><i class="fas fa-play"></i></div>
                             </div>
                             <div class="episode-info">
@@ -275,11 +290,14 @@
                         <div class="footer-logo-icon"><i class="fas fa-play"></i></div>
                         <div class="footer-logo-text">AnimeVerse</div>
                     </div>
-                    <p class="footer-desc">Your ultimate destination for premium anime streaming. Watch thousands of anime series and movies in HD quality, anytime, anywhere.</p>
+                    <p class="footer-desc">Your ultimate destination for premium anime streaming. Watch thousands of
+                        anime series and movies in HD quality, anytime, anywhere.</p>
                     <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
                         <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
                         <a href="#" class="footer-social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
                         <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
@@ -290,7 +308,8 @@
                     <div class="footer-links">
                         <a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a>
                         <a href="library.html" class="footer-link"><i class="fas fa-chevron-right"></i> Library</a>
-                        <a href="index.html#trending" class="footer-link"><i class="fas fa-chevron-right"></i> Trending</a>
+                        <a href="index.html#trending" class="footer-link"><i class="fas fa-chevron-right"></i>
+                            Trending</a>
                         <a href="payment.html" class="footer-link"><i class="fas fa-chevron-right"></i> Premium</a>
                     </div>
                 </div>
@@ -307,7 +326,8 @@
 
                 <div class="footer-newsletter">
                     <h4 class="footer-title">Newsletter</h4>
-                    <p class="footer-newsletter-text">Subscribe to get the latest anime updates and exclusive offers.</p>
+                    <p class="footer-newsletter-text">Subscribe to get the latest anime updates and exclusive offers.
+                    </p>
                     <form class="newsletter-form" onsubmit="return false;">
                         <input type="email" class="newsletter-input" placeholder="Your email address" required>
                         <button type="submit" class="newsletter-btn">Subscribe</button>
@@ -316,7 +336,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2025 AnimeVerse. All rights reserved. Made with <i class="fas fa-heart" style="color: var(--accent-primary);"></i> by the AnimeVerse Team.</p>
+                <p class="footer-copyright">&copy; 2025 AnimeVerse. All rights reserved. Made with <i
+                        class="fas fa-heart" style="color: var(--accent-primary);"></i> by the AnimeVerse Team.</p>
                 <div class="footer-payment">
                     <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
                     <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
@@ -363,10 +384,10 @@
         // Check login state
         document.addEventListener('DOMContentLoaded', () => {
             const userStr = localStorage.getItem('animeverse_user');
-            if(userStr) {
+            if (userStr) {
                 const user = JSON.parse(userStr);
                 document.getElementById('navbar-username').textContent = user.name;
-                if(user.avatar) {
+                if (user.avatar) {
                     document.getElementById('navbar-avatar').src = user.avatar;
                 }
             } else {
@@ -376,4 +397,5 @@
         });
     </script>
 </body>
+
 </html>
