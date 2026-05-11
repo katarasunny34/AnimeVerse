@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AnimeVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .admin-sidebar {
+            width: 250px;
+            background: rgba(11, 11, 15, 0.95);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem 1rem;
+            position: fixed;
+            height: 100%;
+        }
+        .admin-main {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2rem;
+            background: #0b0b0f;
+        }
+        .admin-nav {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .admin-nav-item {
+            padding: 1rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .admin-nav-item:hover, .admin-nav-item.active {
+            background: rgba(255, 46, 99, 0.1);
+            color: var(--accent-primary);
+        }
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: rgba(30, 30, 40, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--accent-primary);
+        }
+        .stat-card-title {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .stat-card-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(30, 30, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .data-table th, .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .data-table th {
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .data-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .action-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+        .action-btn:hover {
+            color: var(--accent-primary);
+        }
+        .status-badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .status-active { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+        .status-pending { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: rgba(30, 30, 40, 0.95);
+            padding: 2rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); }
+        .form-group input, .form-group select {
+            width: 100%; padding: 0.8rem; border-radius: 4px;
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div style="font-size: 1.5rem; font-weight: bold; color: #fff; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem;">
+                <i class="fas fa-play" style="color: var(--accent-primary);"></i> AdminPanel
+            </div>
+            <nav class="admin-nav">
+                <a href="#" class="admin-nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-film"></i> Manage Anime</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-users"></i> Users</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-money-check-alt"></i> Subscriptions</a>
+                <a href="#" class="admin-nav-item"><i class="fas fa-chart-line"></i> Analytics</a>
+                <a href="index.html" class="admin-nav-item" style="margin-top: auto;"><i class="fas fa-sign-out-alt"></i> Exit to Site</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <div class="header-actions">
+                <h1>Overview</h1>
+                <div class="search-bar" style="max-width: 300px; display: flex;">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search..." style="background: transparent; border: none; color: #fff; padding: 0.5rem; outline: none;">
+                </div>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="stat-card">
+                    <div class="stat-card-title">Total Users</div>
+                    <div class="stat-card-value">12,543</div>
+                </div>
+                <div class="stat-card" style="border-left-color: #10b981;">
+                    <div class="stat-card-title">Premium Subs</div>
+                    <div class="stat-card-value">3,421</div>
+                </div>
+                <div class="stat-card" style="border-left-color: #8b5cf6;">
+                    <div class="stat-card-title">Anime Titles</div>
+                    <div class="stat-card-value">845</div>
+                </div>
+                <div class="stat-card" style="border-left-color: #f59e0b;">
+                    <div class="stat-card-title">Monthly Revenue</div>
+                    <div class="stat-card-value">₹8.5L</div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2>Recent Anime Additions</h2>
+                <button class="btn btn-primary" onclick="document.getElementById('addModal').style.display='flex'"><i class="fas fa-plus"></i> Add Anime</button>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Episodes</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1024</td>
+                        <td>High School DxD</td>
+                        <td>Supernatural, Action</td>
+                        <td>49</td>
+                        <td><span class="status-badge status-active">Published</span></td>
+                        <td>
+                            <button class="action-btn"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1023</td>
+                        <td>Solo Leveling</td>
+                        <td>Action, Fantasy</td>
+                        <td>12</td>
+                        <td><span class="status-badge status-active">Published</span></td>
+                        <td>
+                            <button class="action-btn"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1022</td>
+                        <td>Kaiju No. 8</td>
+                        <td>Action, Sci-Fi</td>
+                        <td>0</td>
+                        <td><span class="status-badge status-pending">Draft</span></td>
+                        <td>
+                            <button class="action-btn"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <!-- Add Anime Modal -->
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem;">Add New Anime</h2>
+            <form onsubmit="event.preventDefault(); document.getElementById('addModal').style.display='none'; alert('Anime added successfully!');">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Genres</label>
+                    <input type="text" placeholder="e.g., Action, Romance" required>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select>
+                        <option>Published</option>
+                        <option>Draft</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Save</button>
+                    <button type="button" class="btn btn-secondary" style="flex: 1;" onclick="document.getElementById('addModal').style.display='none'">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

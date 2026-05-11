@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AnimeVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(11, 11, 15, 0.8), rgba(11, 11, 15, 0.9)), url('Assest/Banner/Jujutsu_Kaisen.png') center/cover;
+        }
+        .auth-card {
+            background: rgba(30, 30, 40, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.5s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .auth-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .auth-header p {
+            color: var(--text-muted);
+        }
+        .input-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .input-group i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+        .input-group input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .input-group input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 15px rgba(255, 46, 99, 0.3);
+            outline: none;
+        }
+        .auth-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+        }
+        .auth-btn:hover {
+            box-shadow: 0 0 20px rgba(255, 46, 99, 0.6);
+            transform: translateY(-2px);
+        }
+        .google-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .google-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+        }
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--text-muted);
+        }
+        .auth-footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            color: var(--text-muted);
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .divider span {
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p>Login to continue exploring AnimeVerse</p>
+            </div>
+            
+            <form onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    <label style="color: var(--text-muted);"><input type="checkbox"> Remember me</label>
+                    <a href="#" style="color: var(--accent-primary); text-decoration: none;">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+            </form>
+
+            <div class="divider"><span>OR</span></div>
+
+            <button class="auth-btn google-btn" onclick="handleGoogleLogin()">
+                <i class="fab fa-google" style="color: #ea4335;"></i> Continue with Google
+            </button>
+
+            <div class="auth-footer">
+                Don't have an account? <a href="#">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const name = email.split('@')[0];
+            const user = {
+                name: name.charAt(0).toUpperCase() + name.slice(1),
+                email: email,
+                avatar: 'https://placeholder.vn/placeholder/100x100?bg=ff004f&color=ffffff&text=' + name.charAt(0).toUpperCase()
+            };
+            localStorage.setItem('animeverse_user', JSON.stringify(user));
+            window.location.href = 'index.html';
+        }
+
+        function handleGoogleLogin() {
+            const user = {
+                name: 'Google User',
+                email: 'user@gmail.com',
+                avatar: 'https://placeholder.vn/placeholder/100x100?bg=ea4335&color=ffffff&text=G'
+            };
+            localStorage.setItem('animeverse_user', JSON.stringify(user));
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

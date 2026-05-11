@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch High School DxD on AnimeVerse. Stream all episodes in HD quality.">
+    <meta name="keywords" content="high school dxd, anime streaming, watch anime, anime episodes, supernatural, ecchi">
+    <meta name="author" content="AnimeVerse Team">
+    <meta name="theme-color" content="#0b0b0f">
+    <title>High School DxD - AnimeVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glowing-border {
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+            border: 2px solid rgba(220, 38, 38, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glowing-border:hover {
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.9);
+            border-color: rgba(220, 38, 38, 0.8);
+        }
+        .character-card {
+            background: rgba(30, 30, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+        .character-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            border: 3px solid #dc2626;
+            box-shadow: 0 0 15px rgba(220,38,38,0.5);
+        }
+        .season-tag {
+            background: rgba(220,38,38,0.2);
+            color: #ff4d4d;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-logo">AnimeVerse</div>
+        <div class="loading-bar">
+            <div class="loading-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="sidebar-logo-icon"><i class="fas fa-play"></i></div>
+            <div class="sidebar-logo-text">AnimeVerse</div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="sidebar-nav-title">Menu</div>
+            <a href="index.html" class="sidebar-nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="index.html#trending" class="sidebar-nav-item">
+                <i class="fas fa-fire"></i> Trending
+            </a>
+            <a href="library.html" class="sidebar-nav-item">
+                <i class="fas fa-book"></i> Library
+            </a>
+            <a href="index.html#favorites" class="sidebar-nav-item">
+                <i class="fas fa-heart"></i> Favorites
+            </a>
+
+            <div class="sidebar-nav-title" style="margin-top: 1.5rem;">Discover</div>
+            <a href="index.html#categories" class="sidebar-nav-item">
+                <i class="fas fa-th-large"></i> Categories
+            </a>
+            <a href="payment.html" class="sidebar-nav-item">
+                <i class="fas fa-crown"></i> Premium
+            </a>
+            <a href="team.html" class="sidebar-nav-item">
+                <i class="fas fa-users"></i> Team
+            </a>
+            <a href="contact.html" class="sidebar-nav-item">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p class="sidebar-footer-text">&copy; 2025 AnimeVerse</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search anime, movies, series..." aria-label="Search anime">
+                </div>
+            </div>
+            <div class="navbar-right">
+                <button class="nav-icon-btn" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile" onclick="window.location.href='profile.html'" style="cursor: pointer;">
+                    <div class="user-avatar">
+                        <img src="https://placeholder.vn/placeholder/100x100?bg=ff004f&color=ffffff&text=User" alt="User Avatar" id="navbar-avatar">
+                    </div>
+                    <span class="user-name" id="navbar-username">User</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Anime Details Hero -->
+        <section class="anime-details-hero">
+            <div class="anime-details-bg" style="background-image: url('Assest/Banner/High_School_DxD.jpg')"></div>
+            <div class="anime-details-content">
+                <div class="anime-details-poster" style="border-radius: 12px; overflow: hidden;">
+                    <img src="Assest/img/High_School_DxD.png" alt="High School DxD Poster">
+                </div>
+                <div class="anime-details-info">
+                    <h1 class="anime-details-title">High School DxD</h1>
+                    <div class="anime-details-meta">
+                        <span class="anime-details-meta-item"><i class="fas fa-star"></i> 9.7 Rating</span>
+                        <span class="anime-details-meta-item"><i class="fas fa-calendar"></i> 2012 - 2018</span>
+                        <span class="anime-details-meta-item"><i class="fas fa-tv"></i> 4 Seasons (49 Episodes)</span>
+                        <span class="anime-details-meta-item"><i class="fas fa-clock"></i> 24 min/EP</span>
+                        <span class="anime-details-meta-item"><i class="fas fa-check-circle"></i> Completed</span>
+                    </div>
+                    <div class="anime-details-tags">
+                        <span class="anime-tag">Action</span>
+                        <span class="anime-tag">Fantasy</span>
+                        <span class="anime-tag">Supernatural</span>
+                        <span class="anime-tag">Comedy</span>
+                        <span class="anime-tag">Romance</span>
+                    </div>
+                    
+                    <div style="margin: 1rem 0;">
+                        <span class="season-tag">Season 1: High School DxD</span>
+                        <span class="season-tag">Season 2: High School DxD NEW</span>
+                        <span class="season-tag">Season 3: High School DxD BorN</span>
+                        <span class="season-tag">Season 4: High School DxD HERO</span>
+                    </div>
+
+                    <p class="anime-details-desc">Issei Hyoudou is a dim-witted, lecherous second-year high school student who is killed by a girl on his first date ever. Issei is reincarnated as a devil, and from that day forward, he serves as an underling of Rias Gremory, a high-level devil who is also the prettiest girl on Issei's campus. Thus begins a chaotic supernatural life involving angels, devils, and fallen angels.</p>
+                    
+                    <div class="anime-details-actions">
+                        <button class="btn btn-primary btn-watch" onclick="document.getElementById('video-player').style.display='block'; document.getElementById('video-player').scrollIntoView({behavior: 'smooth'});"><i class="fas fa-play"></i> Watch Episode 1</button>
+                        <button class="btn btn-secondary btn-add-list"><i class="fas fa-plus"></i> Add to Library</button>
+                        <button class="btn btn-glass"><i class="fas fa-share-alt"></i> Share</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Characters Section -->
+        <section class="section" id="characters" style="margin-top: -3rem; position: relative; z-index: 10;">
+            <div class="section-header reveal">
+                <div>
+                    <h2 class="section-title">
+                        <div class="section-title-icon"><i class="fas fa-users"></i></div>
+                        Main Characters
+                    </h2>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;" class="reveal">
+                <div class="character-card">
+                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Issei" alt="Issei Hyoudou" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Issei Hyoudou</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Red Dragon Emperor</p>
+                </div>
+                <div class="character-card">
+                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Rias" alt="Rias Gremory" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Rias Gremory</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Crimson-Haired Ruin Princess</p>
+                </div>
+                <div class="character-card">
+                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Asia" alt="Asia Argento" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Asia Argento</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Bishop</p>
+                </div>
+                <div class="character-card">
+                    <img src="https://placeholder.vn/placeholder/200x200?bg=2d1b1b&color=ff4d4d&text=Akeno" alt="Akeno Himejima" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Akeno Himejima</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Priestess of Thunder</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Player Section -->
+        <section class="video-player-section" id="video-player" style="display: none; padding: 2rem 5%; max-width: 1200px; margin: 0 auto;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 0 30px rgba(220,38,38,0.5); border: 2px solid rgba(220,38,38,0.3);">
+                <!-- Placeholder for demo purposes, you can add an actual iframe if available -->
+                <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: #000; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+                    <i class="fas fa-play-circle" style="font-size: 4rem; color: #dc2626; margin-bottom: 1rem; cursor: pointer; text-shadow: 0 0 20px #dc2626;"></i>
+                    <p style="color: #fff; font-size: 1.2rem;">Episode 1: I Got a Girlfriend!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Episodes Section -->
+        <section class="episodes-section" id="episodes">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">
+                        <div class="section-title-icon"><i class="fas fa-list"></i></div>
+                        Episodes
+                    </h2>
+                    <p class="section-subtitle">Season 1 - 12 Episodes</p>
+                </div>
+            </div>
+
+            <div class="episodes-grid">
+                <!-- Generating dummy episodes for demo -->
+                <script>
+                    const episodesGrid = document.querySelector('.episodes-grid');
+                    const epTitles = [
+                        "I Got a Girlfriend!", "I'm Done Being Human!", "I Made a Friend!", 
+                        "I'm Saving My Friend!", "I Will Defeat My Ex-girlfriend!", "I Work as a Devil!",
+                        "I Get a Familiar!", "I Pick a Fight!", "I've Begun My Training!", 
+                        "The Showdown Begins!", "The Acclaimed Battle Continues!", "I'm Here to Keep My Promise!"
+                    ];
+                    
+                    let html = '';
+                    for(let i = 0; i < 12; i++) {
+                        let epNum = (i+1).toString().padStart(2, '0');
+                        html += `
+                        <div class="episode-card" onclick="document.getElementById('video-player').style.display='block'; document.getElementById('video-player').scrollIntoView({behavior: 'smooth'});" style="cursor: pointer; border-radius: 8px;">
+                            <div class="episode-thumb">
+                                <img src="Assest/Banner/High_School_DxD.jpg" alt="Episode ${i+1}" loading="lazy">
+                                <div class="episode-play-overlay"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="episode-info">
+                                <div class="episode-number">EP ${epNum}</div>
+                                <div class="episode-title">${epTitles[i]}</div>
+                                <div class="episode-duration"><i class="fas fa-clock"></i> 24:00</div>
+                            </div>
+                        </div>
+                        `;
+                    }
+                    document.write(html);
+                </script>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon"><i class="fas fa-play"></i></div>
+                        <div class="footer-logo-text">AnimeVerse</div>
+                    </div>
+                    <p class="footer-desc">Your ultimate destination for premium anime streaming. Watch thousands of anime series and movies in HD quality, anytime, anywhere.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="library.html" class="footer-link"><i class="fas fa-chevron-right"></i> Library</a>
+                        <a href="index.html#trending" class="footer-link"><i class="fas fa-chevron-right"></i> Trending</a>
+                        <a href="payment.html" class="footer-link"><i class="fas fa-chevron-right"></i> Premium</a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4 class="footer-title">Support</h4>
+                    <div class="footer-links">
+                        <a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                        <a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> FAQ</a>
+                        <a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Help Center</a>
+                        <a href="team.html" class="footer-link"><i class="fas fa-chevron-right"></i> Our Team</a>
+                    </div>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p class="footer-newsletter-text">Subscribe to get the latest anime updates and exclusive offers.</p>
+                    <form class="newsletter-form" onsubmit="return false;">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 AnimeVerse. All rights reserved. Made with <i class="fas fa-heart" style="color: var(--accent-primary);"></i> by the AnimeVerse Team.</p>
+                <div class="footer-payment">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="mobile-nav-items">
+            <a href="index.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="library.html" class="mobile-nav-item">
+                <i class="fas fa-book"></i>
+                <span>Library</span>
+            </a>
+            <a href="index.html#trending" class="mobile-nav-item">
+                <i class="fas fa-fire"></i>
+                <span>Trending</span>
+            </a>
+            <a href="team.html" class="mobile-nav-item">
+                <i class="fas fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="contact.html" class="mobile-nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Check login state
+        document.addEventListener('DOMContentLoaded', () => {
+            const userStr = localStorage.getItem('animeverse_user');
+            if(userStr) {
+                const user = JSON.parse(userStr);
+                document.getElementById('navbar-username').textContent = user.name;
+                if(user.avatar) {
+                    document.getElementById('navbar-avatar').src = user.avatar;
+                }
+            } else {
+                document.getElementById('navbar-username').textContent = 'Login';
+                document.querySelector('.user-profile').onclick = () => window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>

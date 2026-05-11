@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initLibraryFilters();
     initHorizontalScroll();
     initScrollSpy();
+    checkUserAuth();
+    initTrailerModal();
 });
 
 // ===== LOADING SCREEN =====
@@ -554,5 +556,55 @@ function initScrollSpy() {
     window.addEventListener('resize', () => {
         const activeItem = document.querySelector('.sidebar-nav-item.active');
         if (activeItem) updateIndicator(activeItem);
+    });
+}
+
+// ===== USER AUTH CHECK =====
+function checkUserAuth() {
+    const userStr = localStorage.getItem('animeverse_user');
+    const profileContainers = document.querySelectorAll('.user-profile');
+    
+    if(userStr) {
+        const user = JSON.parse(userStr);
+        profileContainers.forEach(container => {
+            const nameEl = container.querySelector('.user-name');
+            const avatarEl = container.querySelector('.user-avatar img');
+            if(nameEl) nameEl.textContent = user.name;
+            if(avatarEl && user.avatar) avatarEl.src = user.avatar;
+            container.onclick = () => window.location.href = 'profile.html';
+            container.style.cursor = 'pointer';
+        });
+    } else {
+        profileContainers.forEach(container => {
+            const nameEl = container.querySelector('.user-name');
+            if(nameEl) nameEl.textContent = 'Login';
+            container.onclick = () => window.location.href = 'login.html';
+            container.style.cursor = 'pointer';
+        });
+    }
+}
+
+// ===== TRAILER MODAL =====
+function initTrailerModal() {
+    // We dynamically create the modal if it doesn't exist
+    if(!document.querySelector('.trailer-modal')) {
+        const modalHtml = `
+        <div class="trailer-modal" id="globalTrailerModal">
+            <div class="trailer-content">
+                <button class="close-trailer" onclick="document.getElementById('globalTrailerModal').classList.remove('active'); document.getElementById('trailerIframe').src='';"><i class="fas fa-times"></i></button>
+                <iframe id="trailerIframe" width="100%" height="100%" style="border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>`;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+    }
+
+    // Add click listener to any element with data-trailer
+    document.querySelectorAll('[data-trailer]').forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            const url = el.getAttribute('data-trailer');
+            document.getElementById('trailerIframe').src = url + "?autoplay=1";
+            document.getElementById('globalTrailerModal').classList.add('active');
+        });
     });
 }

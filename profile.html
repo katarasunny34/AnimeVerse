@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - AnimeVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-container {
+            max-width: 1000px;
+            margin: 6rem auto 2rem;
+            padding: 0 1rem;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(30, 30, 40, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+        .profile-avatar-container {
+            position: relative;
+        }
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-primary);
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255, 46, 99, 0.4);
+        }
+        .avatar-edit {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: var(--accent-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .avatar-edit:hover {
+            transform: scale(1.1);
+        }
+        .profile-info h1 {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .premium-badge {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #ffd700;
+            display: none;
+        }
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-val {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-primary);
+        }
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .profile-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+        }
+        .tab-btn {
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+        .tab-btn.active {
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-primary);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(255,255,255,0.2);
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: var(--accent-primary);
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="navbar-left">
+            <a href="index.html" style="color: #fff; text-decoration: none; font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-arrow-left"></i> Home
+            </a>
+        </div>
+        <div class="navbar-right">
+            <button class="btn btn-secondary" onclick="logout()" style="border-color: #dc2626; color: #ff4d4d;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar-container">
+                <img src="https://placeholder.vn/placeholder/150x150?bg=ff004f&color=ffffff&text=User" alt="User Avatar" class="profile-avatar" id="avatarImg">
+                <div class="avatar-edit" onclick="document.getElementById('fileInput').click()">
+                    <i class="fas fa-camera" style="color: #fff;"></i>
+                </div>
+                <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="updateAvatar(event)">
+            </div>
+            <div class="profile-info">
+                <h1><span id="userName">User Name</span> <span class="premium-badge" id="premiumBadge"><i class="fas fa-crown"></i> Premium</span></h1>
+                <p style="color: var(--text-muted);"><i class="fas fa-envelope"></i> <span id="userEmail">user@example.com</span></p>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-val">12</div>
+                        <div class="stat-label">Watchlist</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">45</div>
+                        <div class="stat-label">Watched</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">3</div>
+                        <div class="stat-label">Reviews</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-tabs">
+            <button class="tab-btn active">Settings</button>
+            <button class="tab-btn">Watch History</button>
+        </div>
+
+        <div style="background: rgba(30, 30, 40, 0.6); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h2 style="margin-bottom: 1.5rem;">Preferences</h2>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <div>
+                    <h3>Dark Mode</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Toggle between dark and light themes</p>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <div>
+                    <h3>Autoplay</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Automatically play the next episode</p>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3>Subscription</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;" id="subText">You are currently on the Free Plan.</p>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='payment.html'" id="upgradeBtn">Upgrade</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userStr = localStorage.getItem('animeverse_user');
+            if(userStr) {
+                const user = JSON.parse(userStr);
+                document.getElementById('userName').textContent = user.name;
+                document.getElementById('userEmail').textContent = user.email;
+                if(user.avatar) document.getElementById('avatarImg').src = user.avatar;
+                
+                if(user.isPremium) {
+                    document.getElementById('premiumBadge').style.display = 'inline-block';
+                    document.getElementById('subText').textContent = `You are currently on the ${user.plan}.`;
+                    document.getElementById('upgradeBtn').style.display = 'none';
+                    if(user.plan !== 'Ultra Plan') {
+                        document.getElementById('upgradeBtn').style.display = 'inline-block';
+                        document.getElementById('upgradeBtn').textContent = 'Upgrade to Ultra';
+                    }
+                }
+            } else {
+                window.location.href = 'login.html';
+            }
+
+            document.getElementById('darkModeToggle').addEventListener('change', (e) => {
+                if(!e.target.checked) {
+                    alert("Light mode is too bright for anime! Just kidding, it's a demo.");
+                }
+            });
+        });
+
+        function logout() {
+            localStorage.removeItem('animeverse_user');
+            window.location.href = 'index.html';
+        }
+
+        function updateAvatar(event) {
+            const file = event.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('avatarImg').src = e.target.result;
+                    const userStr = localStorage.getItem('animeverse_user');
+                    if(userStr) {
+                        const user = JSON.parse(userStr);
+                        user.avatar = e.target.result;
+                        localStorage.setItem('animeverse_user', JSON.stringify(user));
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>

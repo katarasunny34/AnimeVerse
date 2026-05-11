@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade to Premium - AnimeVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .payment-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+        .payment-card {
+            background: rgba(30, 30, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .plan-summary {
+            background: linear-gradient(135deg, rgba(255, 46, 99, 0.1), rgba(30, 30, 40, 0.8));
+            border: 1px solid rgba(255, 46, 99, 0.3);
+        }
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .method-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .method-btn:hover, .method-btn.active {
+            background: rgba(255, 46, 99, 0.1);
+            border-color: var(--accent-primary);
+        }
+        .method-content {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+        .method-content.active {
+            display: block;
+        }
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+        .input-group input {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: #fff;
+        }
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        .pay-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+        .pay-btn:hover {
+            background: #e61c4f;
+            box-shadow: 0 0 15px rgba(255,46,99,0.5);
+        }
+        
+        /* Success Animation Overlay */
+        .success-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 11, 15, 0.95);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .success-overlay.active {
+            display: flex;
+            animation: fadeIn 0.5s ease;
+        }
+        .crown-icon {
+            font-size: 5rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite, glow 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            50% { text-shadow: 0 0 40px rgba(255, 215, 0, 0.9); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media(max-width: 768px) {
+            .payment-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-navbar" style="justify-content: center; background: rgba(11,11,15,0.9);">
+        <div class="navbar-left">
+            <a href="index.html" style="color: #fff; text-decoration: none; font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-play" style="color: var(--accent-primary);"></i> AnimeVerse
+            </a>
+        </div>
+    </header>
+
+    <div class="payment-container">
+        <!-- Order Summary -->
+        <div class="payment-card plan-summary">
+            <h2 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-shopping-cart"></i> Order Summary
+            </h2>
+            
+            <div id="plan-details">
+                <!-- Dynamically populated via JS -->
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 1.5rem 0;">
+            
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span>Subtotal</span>
+                <span id="subtotal">₹199</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--text-muted);">
+                <span>Tax (18% GST)</span>
+                <span id="tax">₹35.82</span>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 1.5rem 0;">
+            <div style="display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: bold; color: var(--accent-primary);">
+                <span>Total</span>
+                <span id="total">₹234.82</span>
+            </div>
+            
+            <div style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-lock"></i> Secure 256-bit SSL Encryption
+            </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="payment-card">
+            <h2 style="margin-bottom: 1.5rem;">Payment Method</h2>
+            
+            <div class="payment-methods">
+                <div class="method-btn active" onclick="selectMethod('upi')">
+                    <i class="fas fa-qrcode" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <div style="font-weight: bold;">UPI / QR Code</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">GPay, PhonePe, Paytm</div>
+                    </div>
+                </div>
+                
+                <div class="method-btn" onclick="selectMethod('card')">
+                    <i class="fas fa-credit-card" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <div style="font-weight: bold;">Credit / Debit Card</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Visa, MasterCard, RuPay</div>
+                    </div>
+                </div>
+
+                <div class="method-btn" onclick="selectMethod('netbanking')">
+                    <i class="fas fa-university" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <div style="font-weight: bold;">Net Banking</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">All major Indian banks</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UPI Content -->
+            <div id="content-upi" class="method-content active">
+                <p style="text-align: center; margin-bottom: 1rem;">Scan QR code with any UPI app</p>
+                <div class="qr-placeholder">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=animeverse@okaxis&pn=AnimeVerse&am=234.82&cu=INR" alt="QR Code">
+                </div>
+                <div style="text-align: center; margin: 1rem 0;">OR</div>
+                <div class="input-group">
+                    <input type="text" placeholder="Enter UPI ID (e.g., name@okhdfc)">
+                </div>
+            </div>
+
+            <!-- Card Content -->
+            <div id="content-card" class="method-content">
+                <div class="input-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="0000 0000 0000 0000">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="input-group">
+                        <label>Expiry (MM/YY)</label>
+                        <input type="text" placeholder="MM/YY">
+                    </div>
+                    <div class="input-group">
+                        <label>CVV</label>
+                        <input type="password" placeholder="***" maxlength="3">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Name on Card</label>
+                    <input type="text" placeholder="Cardholder Name">
+                </div>
+            </div>
+
+            <!-- Netbanking Content -->
+            <div id="content-netbanking" class="method-content">
+                <div class="input-group">
+                    <label>Select Bank</label>
+                    <select style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: #fff;">
+                        <option value="sbi">State Bank of India</option>
+                        <option value="hdfc">HDFC Bank</option>
+                        <option value="icici">ICICI Bank</option>
+                        <option value="axis">Axis Bank</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="pay-btn" onclick="processPayment()">
+                Pay <span id="btn-total">₹234.82</span> securely
+            </button>
+            <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+                By proceeding, you agree to our <a href="#" style="color: var(--accent-primary);">Terms & Conditions</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Success Overlay -->
+    <div class="success-overlay" id="successOverlay">
+        <i class="fas fa-crown crown-icon"></i>
+        <h1 style="color: #fff; margin-bottom: 1rem; font-size: 2.5rem; text-align: center;">Welcome to Premium!</h1>
+        <p style="color: var(--text-muted); margin-bottom: 2rem; text-align: center;">Your payment was successful. Enjoy unlimited anime streaming.</p>
+        <button class="btn btn-primary" onclick="window.location.href='index.html'" style="font-size: 1.2rem; padding: 1rem 3rem;">Start Watching</button>
+    </div>
+
+    <script>
+        const plans = {
+            free: { name: 'Free Plan', price: 0 },
+            premium: { name: 'Premium Plan', price: 199 },
+            ultra: { name: 'Ultra Plan', price: 499 }
+        };
+
+        // Parse URL params to get selected plan
+        const urlParams = new URLSearchParams(window.location.search);
+        let selectedPlan = urlParams.get('plan') || 'premium';
+        
+        if (!plans[selectedPlan]) selectedPlan = 'premium';
+        
+        const plan = plans[selectedPlan];
+        const tax = plan.price * 0.18;
+        const total = plan.price + tax;
+
+        // Populate summary
+        document.getElementById('plan-details').innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div>
+                    <h3 style="color: #fff;">${plan.name}</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Billed Monthly</p>
+                </div>
+                <div style="font-size: 1.5rem; font-weight: bold; color: #fff;">₹${plan.price}</div>
+            </div>
+        `;
+        
+        document.getElementById('subtotal').textContent = `₹${plan.price.toFixed(2)}`;
+        document.getElementById('tax').textContent = `₹${tax.toFixed(2)}`;
+        document.getElementById('total').textContent = `₹${total.toFixed(2)}`;
+        document.getElementById('btn-total').textContent = `₹${total.toFixed(2)}`;
+
+        // Payment Method Selection
+        function selectMethod(method) {
+            document.querySelectorAll('.method-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.method-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById(`content-${method}`).classList.add('active');
+        }
+
+        // Process Payment Demo
+        function processPayment() {
+            const btn = document.querySelector('.pay-btn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('successOverlay').classList.add('active');
+                // Update local storage user state
+                let userStr = localStorage.getItem('animeverse_user');
+                let user = userStr ? JSON.parse(userStr) : { name: 'Guest', isPremium: false };
+                user.isPremium = true;
+                user.plan = plan.name;
+                localStorage.setItem('animeverse_user', JSON.stringify(user));
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

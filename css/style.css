@@ -2455,3 +2455,49 @@ textarea.form-input {
 .toast.hiding {
     animation: toastSlideOut 0.3s ease forwards;
 }
+
+/* ===== CUSTOM ANIME CURSOR ===== */
+body {
+    cursor: url('https://cdn.custom-cursor.com/db/8617/32/anime-demon-slayer-tanjiro-kamado-sword-pointer.png'), auto;
+}
+a, button, .clickable, input[type="submit"], input[type="button"], .btn {
+    cursor: url('https://cdn.custom-cursor.com/db/8616/32/anime-demon-slayer-tanjiro-kamado-cursor.png'), pointer !important;
+}
+
+/* ===== TRAILER MODAL ===== */
+.trailer-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+.trailer-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+.trailer-content {
+    width: 90%;
+    max-width: 800px;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid var(--accent-primary);
+    box-shadow: 0 0 30px rgba(255,46,99,0.5);
+    aspect-ratio: 16/9;
+}
+.close-trailer {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
