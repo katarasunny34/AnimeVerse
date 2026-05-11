@@ -2259,10 +2259,92 @@ textarea.form-input {
         /* Better touch target spacing */
     }
 
+    /* 1. Hero Section Scaling Fix */
     .hero-section {
-        min-height: calc(100vh - 70px);
-        height: auto;
-        padding-bottom: 3rem;
+        min-height: auto;
+        height: 60vh;
+        max-height: 500px;
+        padding-bottom: 2rem;
+    }
+    .hero-slide-bg {
+        object-fit: cover;
+    }
+
+    /* 2. Detail Page Consistency */
+    .anime-details-hero {
+        padding: 2rem 1rem;
+        min-height: auto;
+    }
+    .anime-details-poster {
+        width: 140px;
+        aspect-ratio: 2/3;
+        margin-bottom: 1rem;
+    }
+    .anime-details-poster img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .anime-details-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* 3. Character Grid Layout */
+    #characters > div.reveal {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+    .character-card {
+        padding: 0.75rem;
+    }
+    .character-img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0.5rem;
+    }
+    .character-card h3 {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .character-card p {
+        font-size: 0.75rem !important;
+        text-align: center;
+    }
+
+
+
+    /* 5. Profile Page Refinement */
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+    .profile-info {
+        width: 100%;
+    }
+    .profile-info h1 {
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    .profile-stats {
+        justify-content: space-evenly;
+        margin-top: 1.5rem;
+        width: 100%;
+        flex-direction: row;
+        display: flex;
+    }
+
+    /* 6. Z-Index and Layering */
+    .back-to-top {
+        z-index: 9999;
+        bottom: 90px;
     }
 
     /* --- MOBILE BUG FIXES END --- */
