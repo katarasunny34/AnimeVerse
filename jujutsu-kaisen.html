@@ -10,6 +10,31 @@
     <title>Jujutsu Kaisen - AnimeVerse</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .character-card {
+            background: rgba(30, 30, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            border: 3px solid #dc2626;
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -126,10 +151,50 @@
             </div>
         </section>
 
+        <!-- Main Characters Section -->
+        <section class="section" id="characters" style="margin-top: -3rem; position: relative; z-index: 10;">
+            <div class="section-header reveal">
+                <div>
+                    <h2 class="section-title">
+                        <div class="section-title-icon"><i class="fas fa-users"></i></div>
+                        Main Characters
+                    </h2>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;"
+                class="reveal">
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Yuji.jpg"
+                        alt="Yuji Itadori" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Yuji Itadori</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Vessel of Sukuna</p>
+                </div>
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Fushiguro.jpg"
+                        alt="Megumi Fushiguro" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Megumi Fushiguro</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Jujutsu Sorcerer</p>
+                </div>
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Nobara.jpg"
+                        alt="Nobara Kugisaki" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Nobara Kugisaki</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Jujutsu Sorcerer</p>
+                </div>
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Gojo.jpg"
+                        alt="Satoru Gojo" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Satoru Gojo</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Strongest Sorcerer</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Video Player Section -->
         <section class="video-player-section" id="video-player" style="display: none; padding: 2rem 5%; max-width: 1200px; margin: 0 auto;">
             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <iframe src="https://drive.google.com/file/d/15g7HXkT_EdzWvVVO2ECEE6o7pr22lSGc/preview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="autoplay" allowfullscreen></iframe>
+                <iframe src="https://drive.google.com/file/d/1hUn5yLtgzq01soLFniuber7UXfZHKri1/preview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="autoplay" allowfullscreen></iframe>
             </div>
         </section>
 

@@ -10,6 +10,31 @@
     <title>One Piece - AnimeVerse</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .character-card {
+            background: rgba(30, 30, 40, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            border: 3px solid #dc2626;
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -122,6 +147,52 @@
                         <button class="btn btn-secondary btn-add-list"><i class="fas fa-plus"></i> Add to List</button>
                         <button class="btn btn-glass"><i class="fas fa-share-alt"></i> Share</button>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Characters Section -->
+        <section class="section" id="characters" style="margin-top: -3rem; position: relative; z-index: 10;">
+            <div class="section-header reveal">
+                <div>
+                    <h2 class="section-title">
+                        <div class="section-title-icon"><i class="fas fa-users"></i></div>
+                        Main Characters
+                    </h2>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;"
+                class="reveal">
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Luffy.jpg"
+                        alt="Monkey D. Luffy" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Monkey D. Luffy</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Captain</p>
+                </div>
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Zoro.jpg"
+                        alt="Roronoa Zoro" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Roronoa Zoro</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Swordsman</p>
+                </div>
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Nami.jpg"
+                        alt="Nami" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Nami</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Navigator</p>
+                </div>
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Sanji.jpg"
+                        alt="Sanji" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Sanji</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Cook</p>
+                </div>
+                <div class="character-card">
+                    <img src="Assest/Character_pfp/Robin.jpg"
+                        alt="Nico Robin" class="character-img">
+                    <h3 style="margin-bottom: 0.5rem;">Nico Robin</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Archaeologist</p>
                 </div>
             </div>
         </section>
